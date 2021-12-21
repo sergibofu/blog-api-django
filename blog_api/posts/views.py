@@ -44,6 +44,6 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
 
             return Response({'post': postSerializer.data, 'categories': categoriesSerializer.data})
 
-        except Category.DoesNotExist:
+        except Post.DoesNotExist:
             return Response({'error': 'error retriving database'})
     
